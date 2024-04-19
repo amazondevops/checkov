@@ -28,5 +28,16 @@ resource "aws_s3_bucket" "test" {
   }
 }
 
-
+resource "aws_s3_bucket" "checkov" {
+  bucket = "checkov-test"
+  acl    = "public-read" 
+  
+  tags = {
+    Name        = "checkov-test"
+    Environment = var.environment
+    Scope = "PCI"
+    product_v2 = "dev"
+    terraform_managed = "true"
+  }
+}
 
