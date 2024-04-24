@@ -37,7 +37,7 @@ resource "aws_s3_bucket" "checkov" {
     Environment = var.environment
     Scope = "PCI"
     product_v2 = "dev"
-    terraform_managed = "true"
+    #terraform_managed = "true"
   }
 }
 
