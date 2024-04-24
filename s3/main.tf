@@ -23,8 +23,8 @@ resource "aws_s3_bucket" "test" {
     Name        = "Test"
     Environment = var.environment
     Scope = "PCI"
-    # product_v2 = "dev"
-    # terraform_managed = "true"
+    product_v2 = "dev"
+    terraform_managed = "true"
   }
 }
 
