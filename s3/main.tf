@@ -23,10 +23,20 @@ resource "aws_s3_bucket" "test" {
     Name        = "Test"
     Environment = var.environment
     Scope = "PCI"
-    # product_v2 = "dev"
-    # terraform_managed = "true"
+    product_v2 = "dev"
+    terraform_managed = "true"
   }
 }
 
-
-
+resource "aws_s3_bucket" "checkov" {
+  bucket = "checkov-test"
+  acl    = "public-read" 
+  
+  tags = {
+    Name        = "checkov-test"
+    Environment = var.environment
+    Scope = "PCI"
+    product_v2 = "dev"
+    #terraform_managed = "true"
+  }
+}
