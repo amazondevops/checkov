@@ -5,7 +5,7 @@ provider "aws" {
 module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
-  for_each = toset(["one", "two", "three"])
+  for_each = toset(["one", "two"])
 
   name = "instance-${each.key}"
 
@@ -23,7 +23,7 @@ module "ec2_instance" {
 
 module "vote_service_sg" {
   source = "terraform-aws-modules/security-group/aws"
-  count = 3
+  count = 2
   name        = "user-service"
   description = "Security group for user-service with custom ports open within VPC, and PostgreSQL publicly open"
   vpc_id      = "vpc-12345678"
