@@ -18,8 +18,6 @@ module "ec2_instance" {
   tags = {
     Terraform   = "true"
     Environment = "dev"
-    product_v2 = "dev"
-    terraform_managed = "true"
   }
 }
 
